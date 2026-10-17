@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - DayHive</title>
+<style>
+  :root { --bg:#fafafa; --fg:#1c1c1e; --muted:#555; --card:#fff; --line:#ddd; --accent:#1f7a4d; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#121214; --fg:#f2f2f2; --muted:#b0b0b0; --card:#1c1c1e; --line:#333; --accent:#5bd69a; } }
+  body { background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; }
+  main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:28px; } h2 { margin-top:32px; font-size:20px; color:var(--accent); }
+  table { border-collapse:collapse; width:100%; background:var(--card); } td,th { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  .note { color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy</h1>
+<p class="note">DayHive (the "app"). Last updated: 17 October 2026.</p>
+
+<p>DayHive is a personal organiser: habits, money, tasks, a journal, prayer times, English learning, sketches and a teacher's timetable. This page says what the app keeps, where it goes, and what you can do about it. We wrote it to be read.</p>
+
+<h2>1. What stays on your device</h2>
+<p>Everything you write in the app is stored first in a database on your own device: habits, transactions, debts, budgets, tasks, journal entries (with their pictures, voice notes and files), sketches, timetable, settings, and the receipt photos you attach. If you never sign in, nothing leaves your device except the requests listed in section 4.</p>
+
+<h2>2. What we collect when you create an account</h2>
+<table>
+<tr><th>Data</th><th>Why</th></tr>
+<tr><td>Email address and password (the password is handled by our sign-in provider and is never visible to us)</td><td>To sign you in and to recover your account.</td></tr>
+<tr><td>Name and mobile number</td><td>Shown in your profile; used to identify you to people you choose to share habits with.</td></tr>
+<tr><td>Gender and religion (you choose whether to answer)</td><td>To offer features that fit you, such as prayer times and the period tracker. They are not used for advertising.</td></tr>
+<tr><td>The records you sync: habits, money, tasks, journal entries, sketches, timetable, settings and their pictures and files</td><td>To keep your devices the same and to give you a cloud backup. Journal entries and other records are stored as you wrote them; a locked entry is hidden in the app, but its text is not encrypted in the cloud.</td></tr>
+<tr><td>Device name, platform and app version of each signed-in device</td><td>To show "Your devices" so you can sign a device out.</td></tr>
+<tr><td>Subscription status</td><td>To know whether you have premium. Payments are handled by Apple or Google, and by RevenueCat for subscription status; we never see your card.</td></tr>
+</table>
+
+<h2>3. Who can see it</h2>
+<p>Only you, through your account. Our database enforces this with row level security: each row is tied to your user id and cannot be read by another signed-in user. The files in the cloud storage are in a private folder named after your user id. If you use the "together" feature, the habits you choose to share are visible to the partner you accepted, and only those.</p>
+
+<h2>4. Services the app talks to</h2>
+<ul>
+<li><b>Supabase</b> (sign-in, database, file storage): hosts your account and synced records.</li>
+<li><b>RevenueCat</b>, <b>Apple App Store</b> and <b>Google Play</b>: subscriptions and purchases.</li>
+<li><b>Open-Meteo geocoding</b>: when you search for a city for prayer times, the text you type is sent to find it. Nothing else is sent.</li>
+<li><b>Wikipedia / Wikimedia Commons</b>: the Learn section asks for a picture for a word; the word is sent.</li>
+</ul>
+<p>The app has no advertising and no analytics or tracking SDKs, and it does not sell or share your data for advertising.</p>
+
+<h2>5. Permissions</h2>
+<ul>
+<li><b>Notifications and exact alarms</b>: habit, task and prayer reminders at the time you set.</li>
+<li><b>Approximate location</b>: only when you ask for prayer times for where you are. It is used on your device to find your city and is not stored on our servers.</li>
+<li><b>Microphone</b>: only when you record a voice note in the journal.</li>
+<li><b>Camera and pictures</b>: only for pictures you choose to add (the system picker shows only what you pick).</li>
+<li><b>Fingerprint / face</b>: only to unlock the app or a locked entry, handled by the system.</li>
+</ul>
+
+<h2>6. Your choices and your data</h2>
+<ul>
+<li><b>Export</b>: Settings &gt; Backup &gt; Export everything gives you all your data as readable JSON plus your pictures and files.</li>
+<li><b>Delete</b>: Account &gt; Delete account removes your account and everything in it from our servers. See <a href="delete-account.html">how to delete your account</a>.</li>
+<li><b>Backups</b>: automatic backups on your device are in the app's own folder and are not copied by Android's automatic backup.</li>
+<li>You can choose what syncs (Settings &gt; What to sync) or use the app without an account.</li>
+</ul>
+
+<h2>7. How long we keep it</h2>
+<p>For as long as your account exists. Deleted journal entries and tasks wait in the app's trash for 30 days. When you delete your account, your records and files are deleted from our servers.</p>
+
+<h2>8. Children</h2>
+<p>The app is not directed at children under 13, and we do not knowingly collect their data.</p>
+
+<h2>9. Security</h2>
+<p>Connections use HTTPS. Journal PINs are kept only as slow salted hashes. Please keep your password and recovery codes safe.</p>
+
+<h2>10. Changes and contact</h2>
+<p>If we change this policy, we will change the date above and tell you in the app. Questions or requests: <b><a href="mailto:Abdullah.alkadri.96@gmail.com">Abdullah.alkadri.96@gmail.com</a></b>.</p>
+</main>
+</body>
+</html>
