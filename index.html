@@ -3,27 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DayHive</title>
+<title>DayHive: habits, money, tasks, journal and more in one app</title>
+<meta name="description" content="DayHive brings your habits, money, tasks, journal, prayer times, English learning, sketches and a teacher's timetable into one calm, colourful app.">
+<meta property="og:title" content="DayHive">
+<meta property="og:description" content="Your whole day in one calm, colourful app.">
+<meta property="og:image" content="https://dayhive.online/img/dayhive-logo.png">
+<link rel="icon" type="image/png" href="/img/dayhive-logo.png">
 <style>
-  :root { --bg:#fafafa; --fg:#1c1c1e; --accent:#1f7a4d; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#121214; --fg:#f2f2f2; --accent:#5bd69a; } }
-  body { background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; }
-  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
+  :root {
+    --bg:#f6f7ff; --fg:#1e1b4b; --muted:#5b5f77; --card:#ffffff; --line:#e4e6f5;
+    --accent:#4f46e5; --accent-fg:#ffffff;
+    --hero-a:#e0e4ff; --hero-b:#fdf2f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#12112a; --fg:#f2f2ff; --muted:#a3a6c4; --card:#1c1b3a; --line:#2d2c52;
+      --accent:#a5b4fc; --accent-fg:#1e1b4b;
+      --hero-a:#1e1b4b; --hero-b:#2a1740;
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 "Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif; }
   a { color:var(--accent); }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 20px; }
+  header.hero { background:linear-gradient(160deg,var(--hero-a),var(--hero-b)); padding:56px 0 72px; text-align:center; }
+  .logo { width:112px; height:112px; border-radius:26px; box-shadow:0 12px 32px rgba(79,70,229,.30); }
+  h1 { font-size:clamp(2.2rem,6vw,3.4rem); line-height:1.1; margin:24px 0 8px; letter-spacing:-.02em; }
+  .tag { font-size:clamp(1.05rem,2.6vw,1.3rem); color:var(--muted); max-width:620px; margin:0 auto; }
+  .badge { display:inline-block; margin-top:28px; padding:12px 28px; border-radius:999px; background:var(--accent); color:var(--accent-fg); font-weight:600; text-decoration:none; }
+  .soon { display:block; margin-top:10px; font-size:.9rem; color:var(--muted); }
+  section { padding:56px 0 8px; }
+  h2 { font-size:1.6rem; margin:0 0 8px; text-align:center; }
+  .sub { text-align:center; color:var(--muted); margin:0 auto 28px; max-width:560px; }
+  .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; }
+  .card .dot { width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:12px; }
+  .card h3 { margin:0 0 4px; font-size:1.05rem; }
+  .card p { margin:0; color:var(--muted); font-size:.95rem; line-height:1.5; }
+  .points { list-style:none; padding:0; margin:0; display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+  .points li { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+  .points b { display:block; }
+  footer { margin-top:64px; border-top:1px solid var(--line); padding:28px 0 48px; text-align:center; color:var(--muted); font-size:.95rem; }
+  footer nav { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 22px; margin-bottom:12px; }
+  [dir=rtl] { text-align:right; }
 </style>
 </head>
 <body>
-<main>
-<h1>DayHive</h1>
-<p>Habits, money, tasks, a journal, prayer times, English learning, sketches and a teacher's timetable, in one app.</p>
-<ul>
-<li><a href="privacy.html">Privacy Policy</a></li>
-<li><a href="terms.html">Terms of Use</a></li>
-<li><a href="delete-account.html">Delete your account</a></li>
-<li><a href="credits.html">Credits</a></li>
-</ul>
-<p>Contact: <a href="mailto:Abdullah.alkadri.96@gmail.com">Abdullah.alkadri.96@gmail.com</a></p>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="/img/dayhive-logo.png" alt="DayHive logo" width="112" height="112">
+    <h1>DayHive</h1>
+    <p class="tag">Your whole day in one calm, colourful app: habits, money, tasks, a journal, prayer times and more.</p>
+    <a class="badge" href="#features">See what&rsquo;s inside</a>
+    <span class="soon">Coming soon to Google Play</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="features">
+    <h2>Everything for your day</h2>
+    <p class="sub">Eight trackers that work together, so you stop hopping between apps.</p>
+    <div class="grid">
+      <div class="card"><div class="dot" style="background:#dcfce7">&#9989;</div><h3>Habits</h3><p>Daily and weekly habits, streaks, reminders and a focus timer.</p></div>
+      <div class="card"><div class="dot" style="background:#dbeafe">&#128176;</div><h3>Money</h3><p>Expenses, income, budgets, goals, debts and recurring payments.</p></div>
+      <div class="card"><div class="dot" style="background:#fef9c3">&#128221;</div><h3>Tasks</h3><p>To-dos with priorities, categories, steps and due dates.</p></div>
+      <div class="card"><div class="dot" style="background:#fce7f3">&#128211;</div><h3>Journal</h3><p>Notes, diary pages and quotes, with pictures, voice notes and a PIN lock.</p></div>
+      <div class="card"><div class="dot" style="background:#ede9fe">&#128332;</div><h3>Prayer times</h3><p>Prayer times for your city, an athan reminder and an iqama countdown.</p></div>
+      <div class="card"><div class="dot" style="background:#ffedd5">&#128218;</div><h3>Learn English</h3><p>A daily word, practice and a home-screen widget to keep you going.</p></div>
+      <div class="card"><div class="dot" style="background:#cffafe">&#127912;</div><h3>Sketch</h3><p>Draw ideas quickly and keep them with the rest of your day.</p></div>
+      <div class="card"><div class="dot" style="background:#fee2e2">&#128197;</div><h3>Teacher timetable</h3><p>Your school timetable, private lessons, students and payments.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Made to feel good to use</h2>
+    <p class="sub">&nbsp;</p>
+    <ul class="points">
+      <li><b>English and Arabic</b>Right-to-left layout and Arabic text throughout.</li>
+      <li><b>Home-screen widgets</b>Your habits, tasks, notes and prayer times at a glance.</li>
+      <li><b>On all your devices</b>Android, iPhone and Windows, kept in sync with your account.</li>
+      <li><b>Private by design</b>Passcode and fingerprint lock, and you can delete your account at any time.</li>
+    </ul>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="delete-account.html">Delete your account</a>
+      <a href="credits.html">Credits</a>
+    </nav>
+    <div>Questions? <a href="mailto:Abdullah.alkadri.96@gmail.com">Abdullah.alkadri.96@gmail.com</a></div>
+    <div>&copy; DayHive</div>
+  </div>
+</footer>
+
 <script>
   // Supabase sends confirmation and password-reset links to the site address
   // when no other address is allowed: hand those on to the app page.
