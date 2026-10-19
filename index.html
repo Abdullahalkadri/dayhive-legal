@@ -24,5 +24,12 @@
 </ul>
 <p>Contact: <a href="mailto:Abdullah.alkadri.96@gmail.com">Abdullah.alkadri.96@gmail.com</a></p>
 </main>
+<script>
+  // Supabase sends confirmation and password-reset links to the site address
+  // when no other address is allowed: hand those on to the app page.
+  if (/[?&#](code|access_token|error)=/.test(location.search + location.hash)) {
+    location.replace('/auth/callback/' + location.search + location.hash);
+  }
+</script>
 </body>
 </html>

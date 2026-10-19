@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DayHive: email confirmed</title>
+<style>
+  :root { --bg:#fafafa; --fg:#1c1c1e; --accent:#4f46e5; --card:#ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#121214; --fg:#f2f2f2; --accent:#a5b4fc; --card:#1c1c20; } }
+  body { background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; }
+  main { max-width:420px; margin:16px; padding:32px 24px; background:var(--card); border-radius:20px; text-align:center; box-shadow:0 2px 16px rgba(0,0,0,.08); }
+  h1 { margin:0 0 8px; font-size:1.4rem; }
+  p { margin:8px 0; }
+  a.button { display:inline-block; margin-top:16px; padding:12px 24px; border-radius:999px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; }
+  @media (prefers-color-scheme: dark) { a.button { color:#1e1b4b; } }
+  small { opacity:.7; }
+</style>
+</head>
+<body>
+<main>
+<h1 id="title">Done!</h1>
+<p id="text">Your email is confirmed. Opening DayHive…</p>
+<a class="button" id="open" href="app.habitledger.dayhive://auth/callback">Open DayHive</a>
+<p><small id="hint">If nothing happens, open the DayHive app and sign in.</small></p>
+</main>
+<script>
+  // Sends the sign-in link on to the app, keeping everything after the "?"
+  // and the "#" (that is where the confirmation code or tokens are).
+  (function () {
+    var app = 'app.habitledger.dayhive://auth/callback' + location.search + location.hash;
+    document.getElementById('open').href = app;
+    var failed = /error=|error_description=/.test(location.search + location.hash);
+    if (failed) {
+      document.getElementById('title').textContent = 'This link has expired';
+      document.getElementById('text').textContent = 'Open DayHive and ask for a new email.';
+    }
+    // On a phone the app opens at once; on a PC the page just says it is done.
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && !failed) {
+      setTimeout(function () { location.href = app; }, 300);
+    } else if (!failed) {
+      document.getElementById('text').textContent = 'Your email is confirmed. You can close this page and sign in to DayHive.';
+    }
+  })();
+</script>
+</body>
+</html>
