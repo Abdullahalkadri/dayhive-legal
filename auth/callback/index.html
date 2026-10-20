@@ -39,6 +39,8 @@
       setTimeout(function () { location.href = app; }, 300);
     } else if (!failed) {
       document.getElementById('text').textContent = 'Your email is confirmed. You can close this page and sign in to DayHive.';
+      document.getElementById('hint').textContent = 'Asked to reset your password? Open the email on the phone or tablet where DayHive is installed.';
+      document.getElementById('open').style.display = 'none';
     }
   })();
 </script>
