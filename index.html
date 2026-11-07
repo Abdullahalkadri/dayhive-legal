@@ -49,6 +49,17 @@
   [dir=rtl] { text-align:right; }
 </style>
 <style>.contact{display:inline-flex;gap:8px;flex-wrap:wrap;vertical-align:middle}.contact .btn{display:inline-block;padding:6px 16px;border-radius:999px;font-weight:600;text-decoration:none;color:#fff}.contact .wa{background:#25D366}.contact .mail{background:#4f46e5}</style>
+<style>
+  .notify { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px 22px; max-width:620px; margin:0 auto; text-align:center; }
+  .notify form { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .notify input[type=email] { flex:1 1 240px; min-width:0; padding:12px 16px; border-radius:999px; border:1px solid var(--line); background:var(--bg); color:var(--fg); font:inherit; }
+  .notify button { padding:12px 26px; border:0; border-radius:999px; background:var(--accent); color:var(--accent-fg); font:inherit; font-weight:600; cursor:pointer; }
+  .notify button:disabled { opacity:.6; cursor:default; }
+  .notify #iphone-msg { flex-basis:100%; margin:4px 0 0; min-height:1.4em; }
+  .notify #iphone-msg.err { color:#c2410c; }
+  .notify .fine { flex-basis:100%; margin:0; font-size:.85rem; color:var(--muted); }
+  .sr, .hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+</style>
 </head>
 <body>
 
@@ -58,7 +69,7 @@
     <h1>DayHive</h1>
     <p class="tag">Your whole day in one calm, colourful app: habits, money, tasks, a journal, prayer times and more.</p>
     <a class="badge" href="#features">See what&rsquo;s inside</a>
-    <span class="soon">Coming soon to Google Play</span>
+    <span class="soon">Coming soon to Google Play &middot; <a href="#iphone">iPhone version on the way</a></span>
   </div>
 </header>
 
@@ -84,9 +95,24 @@
     <ul class="points">
       <li><b>English and Arabic</b>Right-to-left layout and Arabic text throughout.</li>
       <li><b>Home-screen widgets</b>Your habits, tasks, notes and prayer times at a glance.</li>
-      <li><b>On all your devices</b>Android, iPhone and Windows, kept in sync with your account.</li>
+      <li><b>On your devices</b>Android first, with the iPhone version on the way. Your data stays in sync through your account.</li>
       <li><b>Private by design</b>Passcode and fingerprint lock, and you can delete your account at any time.</li>
     </ul>
+  </section>
+
+  <section id="iphone">
+    <div class="notify">
+      <h2>Using an iPhone?</h2>
+      <p class="sub">DayHive is coming to the iPhone. Leave your e-mail and we will send you one message when it is ready. Nothing else.</p>
+      <form id="iphone-form" novalidate>
+        <label class="sr" for="iphone-email">E-mail address</label>
+        <input id="iphone-email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+        <input id="iphone-hp" class="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Tell me</button>
+        <p id="iphone-msg" role="status" aria-live="polite"></p>
+        <p class="fine">We use your e-mail only to tell you when DayHive is on the iPhone, then delete it. See the <a href="privacy.html#iphone-list">Privacy Policy</a>.</p>
+      </form>
+    </div>
   </section>
 </main>
 
@@ -109,6 +135,32 @@
   if (/[?&#](code|access_token|error)=/.test(location.search + location.hash)) {
     location.replace('/auth/callback/' + location.search + location.hash);
   }
+</script>
+
+<script>
+  // 'Tell me when it is on iPhone': adds one e-mail address to the website's waiting list.
+  // The key below is Supabase's public (publishable) key; the table only allows adding an address.
+  (function () {
+    var form = document.getElementById('iphone-form');
+    if (!form) return;
+    var ENDPOINT = 'https://oswblpsrwatsdvqgfxyz.supabase.co/rest/v1/iphone_interest';
+    var KEY = 'sb_publishable_kKFgQP4gaxBWxQuV2xYP_Q_J-oSSvGM';
+    var msg = document.getElementById('iphone-msg');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('iphone-email').value.trim();
+      var button = form.querySelector('button');
+      if (document.getElementById('iphone-hp').value) { msg.className = ''; msg.textContent = 'Thank you!'; return; }
+      if (email.length > 254 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.className = 'err'; msg.textContent = 'Please enter a valid e-mail address.'; return; }
+      button.disabled = true; msg.className = ''; msg.textContent = 'Saving...';
+      fetch(ENDPOINT, { method: 'POST', headers: { apikey: KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify({ email: email }) })
+        .then(function (r) {
+          if (r.ok || r.status === 409) { msg.textContent = 'Thank you! We will e-mail you when DayHive is on the iPhone.'; form.reset(); }
+          else { throw new Error('status ' + r.status); }
+        })
+        .catch(function () { msg.className = 'err'; msg.textContent = 'Sorry, that did not work. Please e-mail us instead (link below).'; button.disabled = false; });
+    });
+  })();
 </script>
 </body>
 </html>
