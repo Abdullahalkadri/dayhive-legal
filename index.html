@@ -86,7 +86,7 @@ a{color:var(--link)}
 .btn.ghost{background:var(--solid);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line),var(--shadow)}
 .btn.ghost::after{display:none}
 .btn.warm{background:linear-gradient(135deg,#ffb347,var(--warm));color:#3b1d00;box-shadow:0 10px 24px rgba(255,159,46,.4)}
-.store{display:inline-flex;align-items:center;gap:12px;padding:10px 22px 10px 18px;border-radius:16px;background:#0f0e2e;color:#fff;box-shadow:var(--shadow);cursor:default;line-height:1.15;opacity:.96}
+.store{display:inline-flex;align-items:center;gap:12px;padding:10px 22px 10px 18px;border-radius:16px;background:#0f0e2e;color:#fff;box-shadow:var(--shadow);cursor:pointer;text-decoration:none;line-height:1.15;opacity:.96}
 .store svg{width:26px;height:26px;fill:currentColor}
 .store small{display:block;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;opacity:.75}
 .store b{font:600 1.2rem var(--body)}
@@ -555,11 +555,11 @@ details .ans{overflow:hidden}
       <h1 class="reveal" style="--d:.1s"><span data-split data-i18n="hero.h1a">Your whole day,</span> <span class="grad" data-i18n="hero.h1b">in one calm app.</span></h1>
       <p class="lead reveal" style="--d:.5s" data-i18n="hero.lead">Habits, money, tasks, a journal, prayer times and more. Private by design, in English and Arabic.</p>
       <div class="cta reveal" style="--d:.62s">
-        <span class="store" aria-label="Google Play, coming soon">
+        <a class="store" href="https://play.google.com/store/apps/details?id=online.dayhive.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.2v17.6c0 .8.9 1.3 1.6.9l14-8.8c.6-.4.6-1.3 0-1.7l-14-8.8C5.9 1.9 5 2.4 5 3.2Z"/></svg>
-          <span><small data-i18n="hero.soon">Coming soon on</small><b>Google Play</b></span>
+          <span><small data-i18n="hero.soon">Get it on</small><b>Google Play</b></span>
           <i class="live" aria-hidden="true"></i>
-        </span>
+        </a>
         <a class="btn ghost" href="#tour" data-i18n="hero.watch">Watch it work</a>
       </div>
       <p class="micro reveal" style="--d:.74s" data-i18n="hero.micro">7 days free &middot; no card needed</p>
@@ -657,7 +657,7 @@ details .ans{overflow:hidden}
       <li class="reveal" style="--d:.14s"><div class="card"><div class="art t-violet"><svg viewBox="0 0 160 112" aria-hidden="true"><path class="st soft" d="M34 78a46 46 0 0 1 92 0"/><path class="st soft" d="M22 78h116"/><g class="a-sun"><circle cx="80" cy="32" r="9" fill="currentColor"/></g></svg></div><h3 data-i18n="f.5t">Prayer times</h3><p data-i18n="f.5p">Prayer times for your city, an athan reminder and an iqama countdown.</p></div></li>
       <li class="reveal" style="--d:.21s"><div class="card"><div class="art t-orange"><svg viewBox="0 0 160 112" aria-hidden="true"><g font-weight="700" font-size="22" text-anchor="middle" fill="currentColor" font-family="Fredoka,system-ui,sans-serif"><g class="a-word" style="--n:0"><rect class="soft" x="22" y="38" width="26" height="36" rx="8"/><text x="35" y="64">w</text></g><g class="a-word" style="--n:1"><rect class="soft" x="52" y="38" width="26" height="36" rx="8"/><text x="65" y="64">o</text></g><g class="a-word" style="--n:2"><rect class="soft" x="82" y="38" width="26" height="36" rx="8"/><text x="95" y="64">r</text></g><g class="a-word" style="--n:3"><rect class="soft" x="112" y="38" width="26" height="36" rx="8"/><text x="125" y="64">d</text></g></g></svg></div><h3 data-i18n="f.6t">Learn English</h3><p data-i18n="f.6p">A daily word, practice and a home-screen widget to keep you going.</p></div></li>
       <li class="wide reveal" data-in="left" style="--d:0s"><div class="card"><div class="art t-cyan"><svg viewBox="0 0 160 112" aria-hidden="true"><path class="st a-line" style="--len:270;--n:0" d="M18 80c12-44 30-46 40-14s26 34 36 2 26-40 48-10"/></svg></div><div><h3 data-i18n="f.7t">Sketch</h3><p data-i18n="f.7p">Draw ideas quickly and keep them with the rest of your day.</p></div></div></li>
-      <li class="wide reveal" data-in="right" style="--d:.08s"><div class="card"><div class="art t-red"><svg viewBox="0 0 160 112" aria-hidden="true"><g fill="currentColor"><rect class="a-cell" style="--n:0" x="20" y="18" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:3" x="62" y="18" width="36" height="22" rx="6"/><rect class="soft" x="104" y="18" width="36" height="22" rx="6"/><rect class="soft" x="20" y="45" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:1" x="62" y="45" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:4" x="104" y="45" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:2" x="20" y="72" width="36" height="22" rx="6"/><rect class="soft" x="62" y="72" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:5" x="104" y="72" width="36" height="22" rx="6"/></g></svg></div><div><h3 data-i18n="f.8t">Teacher timetable</h3><p data-i18n="f.8p">Your school timetable, private lessons, students and payments.</p></div></div></li>
+      <li class="wide reveal" data-in="right" style="--d:.08s"><div class="card"><div class="art t-red"><svg viewBox="0 0 160 112" aria-hidden="true"><g fill="currentColor"><rect class="a-cell" style="--n:0" x="20" y="18" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:3" x="62" y="18" width="36" height="22" rx="6"/><rect class="soft" x="104" y="18" width="36" height="22" rx="6"/><rect class="soft" x="20" y="45" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:1" x="62" y="45" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:4" x="104" y="45" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:2" x="20" y="72" width="36" height="22" rx="6"/><rect class="soft" x="62" y="72" width="36" height="22" rx="6"/><rect class="a-cell" style="--n:5" x="104" y="72" width="36" height="22" rx="6"/></g></svg></div><div><h3 data-i18n="f.8t">Teacher</h3><p data-i18n="f.8p">Your school timetable, private lessons, students and payments.</p></div></div></li>
     </ul>
   </div>
 </section>
@@ -777,10 +777,10 @@ details .ans{overflow:hidden}
       <div class="fbrand">
         <a class="brand" href="#top"><img src="/img/dayhive-logo.png" width="36" height="36" alt=""><span>DayHive</span></a>
         <p data-i18n="ft.tag">Your whole day in one calm app.</p>
-        <span class="store" aria-label="Google Play, coming soon">
+        <a class="store" href="https://play.google.com/store/apps/details?id=online.dayhive.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.2v17.6c0 .8.9 1.3 1.6.9l14-8.8c.6-.4.6-1.3 0-1.7l-14-8.8C5.9 1.9 5 2.4 5 3.2Z"/></svg>
-          <span><small data-i18n="hero.soon">Coming soon on</small><b>Google Play</b></span>
-        </span>
+          <span><small data-i18n="hero.soon">Get it on</small><b>Google Play</b></span>
+        </a>
       </div>
       <nav class="fcol" aria-label="Explore">
         <h4 data-i18n="ft.explore">Explore</h4>
@@ -851,7 +851,7 @@ details .ans{overflow:hidden}
     'nav.features':'المزايا','nav.screens':'الشاشات','nav.pricing':'الأسعار','nav.faq':'الأسئلة','nav.iphone':'أخبار آيفون',
     'hero.pill':'العادات · المال · المهام · اليوميات','hero.h1a':'يومك كله،','hero.h1b':'في تطبيق واحد هادئ.',
     'hero.lead':'عادات ومال ومهام ويوميات وأوقات صلاة وأكثر. خصوصية أولًا، بالعربية والإنجليزية.',
-    'hero.soon':'قريبًا على','hero.iphone':'أخبار آيفون','hero.micro':'7 أيام مجانًا · بلا بطاقة',
+    'hero.soon':'حمّله من','hero.iphone':'أخبار آيفون','hero.micro':'7 أيام مجانًا · بلا بطاقة',
     'chip.1':'3 من 5 عادات أُنجزت','chip.2':'العصر بعد ساعتين و58 دقيقة','chip.3':'البقالة: 38% من الإنفاق',
     'strip.1':'بالعربية والإنجليزية','strip.2':'يعمل بدون إنترنت','strip.3':'بلا إعلانات','strip.4':'احذف بياناتك متى شئت',
     'f.eyebrow':'كل شيء في مكان واحد','f.h2':'كل ما يخص يومك','f.sub':'ثمانية متتبّعات تعمل معًا، فلا تحتاج للتنقل بين التطبيقات.',
@@ -862,7 +862,7 @@ details .ans{overflow:hidden}
     'f.5t':'أوقات الصلاة','f.5p':'أوقات الصلاة لمدينتك، وتنبيه الأذان، وعدّاد للإقامة.',
     'f.6t':'تعلّم الإنجليزية','f.6p':'كلمة يومية وتدريب وأداة على الشاشة الرئيسية لتواصل التعلّم.',
     'f.7t':'الرسم','f.7p':'ارسم أفكارك بسرعة واحتفظ بها مع بقية يومك.',
-    'f.8t':'جدول المعلّم','f.8p':'جدولك المدرسي ودروسك الخاصة وطلابك ومدفوعاتهم.',
+    'f.8t':'المعلّم','f.8p':'جدولك المدرسي ودروسك الخاصة وطلابك ومدفوعاتهم.',
     's.eyebrow':'شاهده أثناء العمل','s.h2':'هادئ وملوّن وواضح','s.sub':'شاشات حقيقية من التطبيق، ببيانات تجريبية.',
     's.1':'اليوم','s.2':'العادات','s.3':'المال','s.4':'المعاملات','s.5':'اليوميات','s.6':'المهام','s.7':'المعلّم',
     'h.eyebrow':'صُمّم ليكون ممتعًا','h.h2':'مبنيّ حولك أنت',
